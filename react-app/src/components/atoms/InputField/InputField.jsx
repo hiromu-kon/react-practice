@@ -1,7 +1,7 @@
 import styles from "./InputField.module.scss";
 
 
-export const InputField= (props) => {
+export const InputField = (props) => {
 
   const {
     label,
