@@ -1,20 +1,30 @@
-import React, { Component } from 'react';
-import './App.css';
-import { Link } from "react-router-dom";
-import { Routing } from "./router/routing";
-import { InputField } from "./components/atoms/InputField/InputField"
-import { Button } from "./components/atoms/Button/Button"
+import React from 'react';
+import './App.scss';
+import { PrimaryButton } from './components/atoms/Button/PrimaryButton'
+import { SecondaryButton } from './components/atoms/Button/SecondaryButton';
+import { SearchInput } from './components/molecules/SearchInput';
+import { UserCard } from './components/organisms/user/UserCard';
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <Link to={Routing.signIn.path}>投稿ページ</Link>
-        <Button />
-        <InputField />
-      </div>
-    );
-  }
+const user = {
+  name: "Hiro",
+  image: "https://source.unsplash.com/NE0XGVKTmcA",
+  email: "12345@example.com",
+  phone: "090-1111-2222",
+  company: {
+    name: "テスト株式会社"
+  },
+  website: "https://google.com"
 }
 
-export default App;
+export default function App() {
+  return (
+    <div className="App">
+      <PrimaryButton>テスト</PrimaryButton>
+      <SecondaryButton>検索</SecondaryButton>
+      <br />
+      <SearchInput />
+      <UserCard user={user} />
+    </div>
+  );
+}
+
