@@ -1,9 +1,11 @@
 import React from 'react';
 import './App.scss';
-import { PrimaryButton } from './components/atoms/Button/PrimaryButton'
-import { SecondaryButton } from './components/atoms/Button/SecondaryButton';
+import { PrimaryButton } from './components/atoms/button/PrimaryButton'
+import { SecondaryButton } from './components/atoms/button/SecondaryButton';
 import { SearchInput } from './components/molecules/SearchInput';
 import { UserCard } from './components/organisms/user/UserCard';
+import { DefaultLayout } from './components/templates/DefaultLayout';
+import { HeaderOnly } from './components/templates/HeaderOnly';
 
 const user = {
   name: "Hiro",
@@ -18,13 +20,13 @@ const user = {
 
 export default function App() {
   return (
-    <div className="App">
+    <DefaultLayout>
       <PrimaryButton>テスト</PrimaryButton>
       <SecondaryButton>検索</SecondaryButton>
       <br />
       <SearchInput />
       <UserCard user={user} />
-    </div>
+    </DefaultLayout>
   );
 }
 

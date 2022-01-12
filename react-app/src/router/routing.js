@@ -11,4 +11,8 @@ export const Routing = {
     path: "/sign_in",
     pageName: "ログイン"
   },
+  users: {
+    path: "/users",
+    pageName: "ユーザー一覧"
+  },
 }
