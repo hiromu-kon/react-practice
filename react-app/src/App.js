@@ -7,17 +7,6 @@ import { UserCard } from './components/organisms/user/UserCard';
 import { DefaultLayout } from './components/templates/DefaultLayout';
 import { HeaderOnly } from './components/templates/HeaderOnly';
 
-const user = {
-  name: "Hiro",
-  image: "https://source.unsplash.com/NE0XGVKTmcA",
-  email: "12345@example.com",
-  phone: "090-1111-2222",
-  company: {
-    name: "テスト株式会社"
-  },
-  website: "https://google.com"
-}
-
 export default function App() {
   return (
     <DefaultLayout>
