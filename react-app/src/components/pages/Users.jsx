@@ -18,28 +18,17 @@ const users = [...Array(10).keys()].map(((val) => {
   }
 }))
 
-const user = {
-  name: "Hiro",
-  image: "https://source.unsplash.com/NE0XGVKTmcA",
-  email: "12345@example.com",
-  phone: "090-1111-2222",
-  company: {
-    name: "テスト株式会社"
-  },
-  website: "https://google.com"
-}
-
 export const Users = () => {
   const { state } = useLocation();
-  console.log(state);
+  const isAdmin = state ? state.isAdmin : false;
   return (
     <DefaultLayout>
       <SContainer>
         <h2>ユーザー一覧</h2>
         <SearchInput />
         <SUserArea>
-          {users.map((users) => (
-            <UserCard key={user.id} user={user} />
+          {users.map((user) => (
+            <UserCard key={user.id} user={user} isAdmin={isAdmin} />
           ))}
         </SUserArea>
       </SContainer>

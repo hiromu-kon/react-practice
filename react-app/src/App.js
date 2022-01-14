@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 
 export default function App() {
   const navigate = useNavigate();
-  const onClickAdmin = () => navigate({ pathname: "/users", state: { isAdmin: true } });
-  const onClickGeneral = () => navigate({ pathname: "/users", state: { isAdmin: false } });
+  const onClickAdmin = () => navigate("/users", { state: { isAdmin: true } });
+  const onClickGeneral = () => navigate("/users", { state: { isAdmin: false } });
   return (
     <DefaultLayout>
       <SContainer>
