@@ -1,6 +1,8 @@
+import { useLocation } from "react-router-dom"
 import styled from "styled-components"
 import { SearchInput } from "../molecules/SearchInput"
 import { UserCard } from "../organisms/user/UserCard"
+import { DefaultLayout } from "../templates/DefaultLayout"
 
 const users = [...Array(10).keys()].map(((val) => {
   return {
@@ -28,15 +30,20 @@ const user = {
 }
 
 export const Users = () => {
+  const { state } = useLocation();
+  console.log(state);
   return (
-    <SContainer>
-      <h2>ユーザー一覧</h2>
-      <SearchInput />
-      {users.map((users) => (
-        <UserCard key={user.id} user={user} />
-      ))}
-      <SUserArea />
-    </SContainer>
+    <DefaultLayout>
+      <SContainer>
+        <h2>ユーザー一覧</h2>
+        <SearchInput />
+        <SUserArea>
+          {users.map((users) => (
+            <UserCard key={user.id} user={user} />
+          ))}
+        </SUserArea>
+      </SContainer>
+    </DefaultLayout>
   )
 }
 
@@ -51,6 +58,6 @@ const SUserArea = styled.div`
   padding-top: 40px;
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minfix(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   grid-gap: 20px;
 `
