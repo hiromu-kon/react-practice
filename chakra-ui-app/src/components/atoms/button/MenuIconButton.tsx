@@ -5,6 +5,7 @@ import { memo, VFC } from "react";
 type Props = {
   onOpen: () => void;
 }
+console.log()
 export const MenuIconButton: VFC<Props> = memo((props) => {
   const { onOpen } = props;
 
