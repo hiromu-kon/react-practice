@@ -1,11 +1,12 @@
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { BasicTextField } from './BasicTextfield';
+import { IconBadge } from './IconBadge';
 import { ThemeProvider } from '@mui/material/styles';
+import MailIcon from '@mui/icons-material/Mail';
 import theme from "../../../styles/theme"
 
 export default {
-  title: 'Atoms/Textfield',
-  component: BasicTextField,
+  title: 'Molecules/IconBadge',
+  component: IconBadge,
   argTypes: {
     backgroundColor: { control: 'color' },
   },
@@ -13,17 +14,16 @@ export default {
     (Story) => {
       return (
         <ThemeProvider theme={theme}>
-          <BasicTextField label='ABC' variant='outlined' />
+          <IconBadge badgeContent={4}><MailIcon color="action" /></IconBadge>
         </ThemeProvider>
       )
     },
   ],
-} as ComponentMeta<typeof BasicTextField>;
+} as ComponentMeta<typeof IconBadge>;
 
-const Template: ComponentStory<typeof BasicTextField> = (args) => <BasicTextField {...args} />;
+const Template: ComponentStory<typeof IconBadge> = (args) => <IconBadge {...args}><MailIcon color="action" /></IconBadge>;
 
 export const Primary = Template.bind({});
 Primary.args = {
-  label: 'ABC',
-  variant: 'outlined'
+
 };

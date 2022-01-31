@@ -13,11 +13,11 @@ type Props = {
 }
 
 /**
- * BasicTextField
+ * TextForm
  * @param props
  * @returns 
  */
-export const BasicTextField: VFC<Props> = memo((props) => {
+export const TextForm: VFC<Props> = memo((props) => {
   const { label, variant } = props;
 
   return (
