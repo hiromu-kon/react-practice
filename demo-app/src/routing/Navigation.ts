@@ -1,7 +1,7 @@
 /**
- * RoutingPath
+ * Navigation
  */
-export const RoutingPath =  {
+export const Navigation =  {
   /* Top */
   Top: {
     path: "/",
