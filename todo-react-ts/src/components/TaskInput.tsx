@@ -9,8 +9,7 @@ type Props = {
 const TaskInput: React.FC<Props> = ({ setTasks, tasks }) => {
     const [ inputTitle, setInputTitle ] = useState<string>('')
     const [ count, setCount ] = useState<number>(tasks.length + 1)
- 
- 
+
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         setInputTitle(e.target.value)
     }
